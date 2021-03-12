@@ -54,7 +54,7 @@ class AppNavbar extends Component {
   }
 
   render() {
-    return <Navbar color="dark" dark expand="md">
+    return <Navbar color="light" dark expand="md">
       <Nav className="mr-auto">
         <NavLink href="/hero">Home</NavLink>
         {this.state.showUser && <NavLink href="/user">User</NavLink>}
@@ -67,12 +67,12 @@ class AppNavbar extends Component {
           this.state.login ? (
             <Nav className="ml-auto" navbar>
               <NavItem>
-                  <NavbarText>
-                    Signed in as: <a href="/profile">{this.state.username}</a>
+                  <NavbarText className="text-primary">
+                    Signed in as: <a href="/profile" className="text-dark">{this.state.username}</a>
                   </NavbarText>
               </NavItem>
               <NavItem>
-                <NavLink href="#" onClick={this.signOut}>SignOut</NavLink>
+                <NavLink href="#" className="text-primary" onClick={this.signOut}>SignOut</NavLink>
               </NavItem>
             </Nav>                 
           ) : (

@@ -27,7 +27,7 @@ function AppHome() {
       <AppWorks/>
       <AppFaq/>
       {/* <AppPricing/> */}
-      <SignUp/>
+      {/*<SignUp/>*/}
       <AppContact/>
       <Footer>
       <AppFooter/>

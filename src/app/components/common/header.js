@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Anchor, Drawer, Button } from 'antd';
-
+import { BsFillKanbanFill } from 'react-icons/bs';
 const { Link } = Anchor;
+
 
 function AppHeader() {
   const [visible, setVisible] = useState(false);
@@ -18,7 +19,7 @@ function AppHeader() {
     <div className="container-fluid">
       <div className="header">
         <div className="logo">
-          <i className="fas fa-bolt"></i>
+          <BsFillKanbanFill/>
           <a href="http://google.com">KANBAN</a>
         </div>
         <div className="mobileHidden">
@@ -28,8 +29,9 @@ function AppHeader() {
             <Link href="#feature" title="Features" />
             <Link href="#works" title="How it works" />
             <Link href="#faq" title="FAQ" />
-            <Link href="#SignUp" title="Sign Up" />
             <Link href="#contact" title="Contact" />
+            <Link href="/signUp" title="Sign Up" />
+            <Link href="/Login" title="Sign in" /> 
           </Anchor>
         </div>
         <div className="mobileVisible">
@@ -48,8 +50,9 @@ function AppHeader() {
               <Link href="#feature" title="Features" />
               <Link href="#works" title="How it works" />
               <Link href="#faq" title="FAQ" />
-              <Link href="#SignUp" title="Sign Up" />
               <Link href="#contact" title="Contact" />
+              <Link href="/signUp" title="Sign Up" />
+              <Link href="/Login" title="Sign in" /> 
             </Anchor>
           </Drawer>
         </div>
