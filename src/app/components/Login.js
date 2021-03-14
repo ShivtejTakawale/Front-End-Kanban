@@ -55,8 +55,9 @@ class Login extends Component {
       </Header>
         <Container fluid>
           <Row style={{marginTop:"100px"}}>
-          <Col sm="12" md={{ size: 3, offset:5 }}>
-            <div className=" d-flex justify-content-center align-items-center">
+          <Col lg="3"></Col>           
+          <Col lg="6" lg={{ size: 4 ,offset: 1}}>
+            <div className=" d-flex justify-content-center align-items-center"  style={{marginBottom: "10px"}}>
               <img src={avatar} alt="Avatar" className="avatar center" 
                 style={{width: "50%", height: "auto"}}/>
             </div>
@@ -96,9 +97,10 @@ class Login extends Component {
               }
             </Form>
             </Col>
+            <Col lg="3"></Col>
           </Row>
         </Container>
-        <Footer style={{marginTop:"150px",width:"100%"}}>
+        <Footer style={{marginTop:"94px",width:"max-width"}}>
       <AppFooter/>
       </Footer>
       </div>);

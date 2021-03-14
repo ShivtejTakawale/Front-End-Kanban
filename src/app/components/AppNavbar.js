@@ -43,10 +43,10 @@ class AppNavbar extends Component {
 
   signOut = () => {
     AuthenticationService.signOut();
-    this.props.history.push('/home');
-    window.location.reload();
+    this.props.history.push('/hero');
+    window.location.reload(); 
   }
-
+   
   toggle() {
     this.setState({
       isOpen: !this.state.isOpen
