@@ -1,13 +1,14 @@
-import React from 'react';
-
 import { BackTop } from 'antd';
+import React from 'react';
+import { BsFillKanbanFill } from 'react-icons/bs';
+
 
 function AppFooter() {
   return (
-    <div className="container-fluid">
+    <div className="container-fluid"> 
       <div className="footer">
         <div className="logo">
-          <i className="fas fa-bolt"></i>
+          <BsFillKanbanFill/>
           <a href="http://google.com">KANBAN</a>
         </div>
         <ul className="socials">

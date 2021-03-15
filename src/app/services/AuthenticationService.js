@@ -19,12 +19,13 @@ class AuthenticationService {
     localStorage.removeItem("user");
   }
 
-  register = async(firstname, lastname, username, email, password) => {
+  register = async(firstname, lastname, username, email,mobileno, password) => {
     return axios.post("http://localhost:8082/api/auth/signup", {
       firstname,
       lastname,
       username,
       email,
+      mobileno,
       password 
     });
   }

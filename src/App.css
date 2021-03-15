@@ -105,6 +105,14 @@ title holder
 header
 ------ 
 */
+/*.header{
+  background: rgb(248, 248, 248);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}*/
+
 .ant-layout-header {
   background: rgb(248, 248, 248);
   position: fixed;
@@ -301,6 +309,20 @@ block
   border-bottom: 1px solid #d9d9d9;
 }
 
+.signup-block{
+  padding: 60px 0;
+  margin-top: 20px;
+  margin-bottom: 20x;
+  border-bottom: 1px solid #d9d9d9;
+}
+
+.login-block{
+  position:initial;
+  padding: 2px;
+  margin-top: 0px;
+  margin-bottom: 0;
+  /*border-bottom: 1px solid #d9d9d9;*/
+}
 /* 
 about
 ----- 
@@ -425,11 +447,6 @@ contact
 .contactBlock .ant-form textarea {
   min-height: 120px;
   height: 120px;
-}
-
-.Signupblock .ant-form {
-  max-width: 640px;
-  margin: auto;
 }
 /* 
 footer

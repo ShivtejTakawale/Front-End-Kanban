@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router';
 //import AppNavbar from './AppNavbar';
 import { Container } from 'reactstrap';
 import { Button, Form, FormGroup, Input, Label, Row, Col } from "reactstrap";
 import { Alert } from "react-bootstrap";
-//import AppHeader from "./common/header";
 import Authentication from '../services/AuthenticationService'
 import Login from './Login';
-import { Redirect } from 'react-router';
+import AppHeader from "./common/header";
+import AppFooter from "./common/footer";
+import { Layout } from 'antd';
+const { Header,Footer } = Layout;
+
 
 const validEmailRegex = RegExp(/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i);
 
@@ -27,6 +31,7 @@ class SignUp extends Component {
       lastname: "",
       username: "",
       email: "",
+      mobileno:"",
       password: "",
       message: "",
       successful: false,
@@ -36,6 +41,7 @@ class SignUp extends Component {
         lastname: '',
         username: '',
         email: '',
+        mobileno:'',
         password: ''
       }
     };
@@ -70,7 +76,13 @@ class SignUp extends Component {
             ? ''
             : 'Email is not valid!';
         break;
-      case 'password': 
+        case 'mobileno': 
+        errors.mobileno = 
+        value.length < 11
+            ? ''
+            : 'Mobileno is not valid!';
+        break;
+         case 'password': 
         errors.password = 
           value.length < 8
             ? 'Password must be 8 characters long!'
@@ -95,6 +107,7 @@ class SignUp extends Component {
         this.state.lastname,
         this.state.username,
         this.state.email,
+        this.state.mobileno,
         this.state.password
       ).then(
         response => {
@@ -145,9 +158,12 @@ class SignUp extends Component {
     }
 
     return ( 
-      <div id="SignUp" className="block Signupblock">
+      <div id="SignUp" >
+        <Header>
+      <AppHeader/>
+      </Header>
         {/*<AppNavbar/>*/}
-        <Container fluid>
+        <Container fluid className="signup-block">
           <Row>
           <Col sm="12" md={{ size: 4, offset: 4 }}>
           {title}
@@ -227,7 +243,26 @@ class SignUp extends Component {
                     )
                 }
               </FormGroup>
-
+               
+              <FormGroup controlId="formMobileno">
+                <Label for="mobileno">Mobile No</Label>
+                <Input required
+                  type="text" 
+                  placeholder="Enter Mobile no"
+                  name="mobileno" id="mobileno"
+                  value={this.state.mobileno}
+                  autoComplete="mobileno"
+                  onChange={this.changeHandler}
+                />
+                {
+                  errors.mobileno && ( 
+                      <Alert variant="danger">
+                        {errors.mobileno}
+                      </Alert>
+                    )
+                }
+              </FormGroup>
+              
               <FormGroup controlId="formPassword">
                 <Label for="password">Password</Label>
                 <Input required 
@@ -257,12 +292,14 @@ class SignUp extends Component {
                   </Alert>
                 )
               }
-
               {alert}
             </Form>
             </Col>
           </Row>
         </Container>
+        <Footer>
+      <AppFooter/>
+      </Footer>
       </div>);
   }
 }
