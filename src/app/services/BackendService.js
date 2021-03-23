@@ -15,16 +15,27 @@ axios.interceptors.request.use( config => {
 
 class BackendService {
   async getUserBoard() {
-    return await axios.get("http://localhost:8082/api/test/user");
+    return await axios.get("http://localhost:8080/api/test/user");
   }
 
   async getPmBoard() {
-    return await axios.get("http://localhost:8082/api/test/pm");
+    return await axios.get("http://localhost:8080/api/test/pm");
   }
 
   async getAdminBoard() {
-    return await axios.get("http://localhost:8082/api/test/admin");
+    return await axios.get("http://localhost:8080/api/test/admin");
   }
+  
+  createProject(project)
+{
+  return axios.post("http://localhost:8080/api/v1/project",project);
+}
+createEmployee(employee){
+  return axios.post("http://localhost:8080/api/v1/employees", employee);
+}
+createTask(task){
+  return axios.post("http://localhost:8080/api/v1/task", task);
+}
 }
 
 export default new BackendService();

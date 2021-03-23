@@ -29,7 +29,7 @@ class UserPage extends Component {
     return (
       <div>
         <AppNavbar/>
-        <Container fluid>
+        {/* <Container fluid>
             {
               this.state.content ? (
                 <div style={{marginTop: "20px"}}>
@@ -45,7 +45,7 @@ class UserPage extends Component {
                 </div>
               )
             }
-        </Container>
+        </Container> */}
       </div>
     );
   }
